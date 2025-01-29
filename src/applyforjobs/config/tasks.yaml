@@ -1,17 +1,6 @@
-research_task:
+write_resume:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is 2024.
+    Given that the following lines are my resume (untill =+=) \n {my_resume} \n =+= create a tailored resume that fits the description of this role:  {role}.
   expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
+    A complete resume.
   agent: researcher
-
-reporting_task:
-  description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
-  expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst

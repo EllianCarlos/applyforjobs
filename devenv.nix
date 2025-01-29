@@ -4,7 +4,7 @@
 
   packages = [
     pkgs.git
-    pkgs.ollama
+    pkgs.ollama-rocm
     pkgs.uv
   ];
 

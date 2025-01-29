@@ -2,7 +2,8 @@
 import sys
 import warnings
 
-from applyforjobs.crew import Applyforjobs
+from crew import Applyforjobs
+from constants import ROLE
 
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
@@ -11,14 +12,18 @@ warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 # Replace with inputs you want to test with, it will automatically
 # interpolate any tasks and agents information
 
+
 def run():
     """
     Run the crew.
     """
-    inputs = {
-        'topic': 'AI LLMs'
-    }
-    Applyforjobs().crew().kickoff(inputs=inputs)
+    with open("resume.md", "r") as f:
+        resume = f.read();
+        inputs = {
+            'my_resume': resume,
+            'role': ROLE
+        }
+        Applyforjobs().crew().kickoff(inputs=inputs)
 
 
 def train():
@@ -56,3 +61,6 @@ def test():
 
     except Exception as e:
         raise Exception(f"An error occurred while replaying the crew: {e}")
+
+if __name__ == "__main__":
+    run()
