@@ -5,6 +5,7 @@
   packages = [
     pkgs.git
     pkgs.ollama
+    pkgs.uv
   ];
 
   scripts.hello.exec = "echo hello from $GREET";
@@ -24,6 +25,7 @@
     venv.requirements = ''
       ollama
       crewai
+      crewai-tools
       unstructured
       langchain-community
       Jinja2>=3.1.2
@@ -32,4 +34,5 @@
     '';
     uv.enable = true;
   };
+  dotenv.enable = true;
 }
